@@ -1,0 +1,20 @@
+[project]
+name = "krill"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Tuxzilla", email = "tuxzilla@tuxzilla.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi>=0.156.4",
+    "fastapi-mail>=1.6.8",
+]
+
+[project.scripts]
+krill = "krill:main"
+
+[build-system]
+requires = ["uv_build>=0.12.24,<0.13.0"]
+build-backend = "uv_build"

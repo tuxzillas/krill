@@ -5,6 +5,8 @@ from fastapi_mail import ConnectionConfig, FastMail, MessageSchema, MessageType
 from pydantic import SecretStr
 from pydantic.networks import NameEmail
 
+from .helpers import create_verification_url
+
 load_dotenv()
 
 config = ConnectionConfig(
@@ -21,11 +23,10 @@ config = ConnectionConfig(
 
 mailer = FastMail(config)
 
-
 async def send_confirmation_email(
     recipient: str,
-    confirmation_url: str,
 ) -> None:
+    confirmation_url = await create_verification_url()
     message = MessageSchema(
         subject="Confirm your application",
         recipients=[NameEmail(name=recipient, email=recipient)],

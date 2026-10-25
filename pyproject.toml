@@ -1,13 +1,14 @@
 [project]
 name = "krill"
 version = "0.1.0"
-description = "Add your description here"
+description = "a small fastapi verification service"
 readme = "README.md"
 authors = [
     { name = "Tuxzilla", email = "tuxzilla@tuxzilla.com" }
 ]
 requires-python = ">=3.14"
 dependencies = [
+    "aiosqlite>=0.22.1",
     "fastapi>=0.156.4",
     "fastapi-mail>=1.6.8",
 ]
